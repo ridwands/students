@@ -10,6 +10,5 @@ module.exports = (fastify, opts, next) => {
         method: "GET",
         handler: StudentsController.getStudents
     })
-
     next()
 }

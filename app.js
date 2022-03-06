@@ -3,6 +3,11 @@ const fastify = require('fastify')({ logger: true })
 
 // Declare a route
 fastify.register(require('./src/router'))
+.register(require('fastify-postgres'), {
+    connectionString: 'postgres://ridwands:123@localhost/kuliah'
+})
+
+fastify.decorateRequest('fastify', fastify); 
 
 // Run the server!
 const start = async () => {
